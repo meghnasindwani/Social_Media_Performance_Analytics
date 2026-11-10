@@ -3,11 +3,11 @@
 **Project owner:** Meghna  
 **Programme:** MCA 1-B  
 **Primary platform:** Instagram  
-**Initial data scope:** Publicly available research and repository datasets only. No private client data and no Bling Bazaar data are included.
+**Initial data scope:** Publicly available research and repository datasets only.
 
 ## 1. Project purpose
 
-Build an end-to-end analytics workflow that examines how social-media content characteristics relate to observable post outcomes. The system will support descriptive analysis, content/hook analysis, statistical testing, visual reporting and (only where the data supports it) machine-learning experiments.
+Build an end-to-end analytics workflow that examines how social-media content characteristics relate to observable post outcomes. The system will support descriptive analysis, content/hook analysis, statistical testing, visual reporting and machine-learning experiments.
 
 The project will distinguish observed source data from manually coded fields, derived metrics and synthetic demonstration data. Synthetic rows must never be presented as real observations or used to support empirical conclusions.
 
