@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+.env
+*.py[cod]
+# Keep raw downloads out of Git unless their licences explicitly permit redistribution.
+data/raw/*
+!data/raw/**/.gitkeep
+data/staging/*
+data/processed/*
+reports/*.xlsx
+reports/*.csv
+reports/*.png

@@ -1,0 +1,26 @@
+field_name,canonical_table,data_type,definition,source_or_derivation,notes
+source_record_id,content_posts,TEXT,Identifier of a row/post in its original dataset,Source dataset,Must be unique within dataset_code
+platform,content_posts,VARCHAR(30),Social platform for the record,Source dataset,Do not infer if absent
+published_at,content_posts,TIMESTAMP,Original post publication timestamp,Source dataset,Preserve timezone assumptions; may be date-only
+post_type,content_posts,VARCHAR(40),Format such as Reel image carousel or video,Source dataset,Map original labels but preserve raw value
+caption,content_posts,TEXT,Published caption text,Source dataset,Handle personal data in captions carefully
+source_content_category,content_posts,TEXT,Topic/category supplied by source,Source dataset,Do not equate with our own content pillar without a mapping
+video_duration_seconds,content_posts,NUMERIC,Length of video in seconds,Source dataset or annotation,Null when unavailable
+views,content_metrics,BIGINT,Observed video/post views,Source dataset,Not interchangeable with impressions or reach
+impressions,content_metrics,BIGINT,Total displays/impressions,Source dataset,Definition can vary by platform
+reach,content_metrics,BIGINT,Unique accounts reached,Source dataset,Usually owner-only analytics
+likes,content_metrics,BIGINT,Like count,Source dataset,Observed value only
+comments,content_metrics,BIGINT,Comment count,Source dataset,Observed value only
+shares,content_metrics,BIGINT,Share count,Source dataset,Observed value only
+saves,content_metrics,BIGINT,Save/bookmark count,Source dataset,Observed value only
+profile_visits,content_metrics,BIGINT,Profile visits attributed to content,Source dataset,May be owner-only
+follows,content_metrics,BIGINT,Follows attributed to content,Source dataset,May be owner-only
+reported_interaction_rate,content_metrics,NUMERIC,Interaction rate as defined/reported by source,Source dataset,Preserve source definition; do not assume denominator
+hook_type,content_annotations,VARCHAR(50),Primary opening-hook category,Source coding or manual coding,Use controlled taxonomy/codebook
+hook_text,content_annotations,TEXT,Opening hook text,Source coding or manual coding,May be manually transcribed
+cta_type,content_annotations,VARCHAR(50),Primary call-to-action type,Source coding or manual coding,Use controlled taxonomy/codebook
+content_pillar,content_annotations,VARCHAR(60),Our normalized strategic content pillar,Manual project annotation,Keep separate from source_content_category
+annotation_method,content_annotations,VARCHAR(30),How the annotation was produced,Project metadata,SOURCE_CODED / MANUAL_PROJECT / AI_ASSISTED_REVIEWED / SYNTHETIC
+is_synthetic,content_metrics,BOOLEAN,Marks an artificially generated metric row,Project metadata,TRUE rows excluded from empirical results
+engagement_rate_by_reach,view only,NUMERIC,Interactions divided by reach,Derived,Only calculate where reach is available and positive
+engagement_rate_by_impressions,view only,NUMERIC,Interactions divided by impressions,Derived,Only calculate where impressions is available and positive
